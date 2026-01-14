@@ -5,19 +5,19 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-accent-lime animate-pulse lime-glow" />
           <span className="text-xs font-bold uppercase tracking-widest text-accent-lime">
-            Status: Open for work
+            Gmeza
           </span>
         </div>
 
         <div className="flex items-center gap-8">
-          <a href="#work" className="text-sm font-medium hover:text-primary">Work</a>
-          <a href="#about" className="text-sm font-medium hover:text-primary">Story</a>
-          <a href="#skills" className="text-sm font-medium hover:text-primary">Stack</a>
+          <a href="#work" className="text-sm font-medium hover:text-primary">Sobre mí</a>
+          <a href="#about" className="text-sm font-medium hover:text-primary">Habilidades</a>
+          <a href="#skills" className="text-sm font-medium hover:text-primary">Proyectos</a>
           <a
             href="#contact"
             className="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold hover:opacity-90"
           >
-            Let's Talk
+            Hablemos
           </a>
         </div>
       </div>
