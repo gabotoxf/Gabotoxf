@@ -10,9 +10,9 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-8">
-          <a href="#work" className="text-sm font-medium hover:text-primary">Sobre mí</a>
-          <a href="#about" className="text-sm font-medium hover:text-primary">Habilidades</a>
-          <a href="#skills" className="text-sm font-medium hover:text-primary">Proyectos</a>
+          <a href="#about" className="text-sm font-medium hover:text-primary">Sobre mí</a>
+          <a href="#skills" className="text-sm font-medium hover:text-primary">Habilidades</a>
+          <a href="#projects" className="text-sm font-medium hover:text-primary">Proyectos</a>
           <a
             href="#contact"
             className="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold hover:opacity-90"

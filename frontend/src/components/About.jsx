@@ -1,4 +1,4 @@
-import fotoGabo from "../assets/img/gabo2.jpeg";
+import fotoGabo from "../assets/img/yo/gabo2.jpeg";
 
 export default function About() {
   return (
