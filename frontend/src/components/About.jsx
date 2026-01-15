@@ -67,7 +67,7 @@ export default function About() {
               </p>
 
               <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                Actualmente trabajo a medio tiempo en la automatización de procesos internos, desarrollando soluciones digitales que optimizan flujos de trabajo y mejoran la eficiencia operativa.
+                Actualmente trabajo a medio tiempo en la automatización de procesos internos de una empresa, desarrollando soluciones digitales que optimizan flujos de trabajo y mejoran la eficiencia operativa.
               </p>
             </div>
 
