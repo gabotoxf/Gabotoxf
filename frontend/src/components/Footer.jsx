@@ -11,34 +11,28 @@ export default function Footer() {
               </span>
             </div>
             <span className="text-lg font-extrabold text-white tracking-tight">
-              DEVCORE
+              GABOTOXF
             </span>
           </div>
 
           <div className="flex flex-wrap justify-center gap-10">
             <a
-              href="#"
+              href="https://x.com/gabotox3f"
               className="text-sm font-semibold text-slate-500 hover:text-white transition-colors"
             >
               Twitter
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/gabotoxf/"
               className="text-sm font-semibold text-slate-500 hover:text-white transition-colors"
             >
               LinkedIn
             </a>
             <a
-              href="#"
+              href="https://github.com/gabotoxf"
               className="text-sm font-semibold text-slate-500 hover:text-white transition-colors"
             >
               GitHub
-            </a>
-            <a
-              href="#"
-              className="text-sm font-semibold text-slate-500 hover:text-white transition-colors"
-            >
-              Dribbble
             </a>
           </div>
         </div>

@@ -17,7 +17,7 @@ export default function Hero() {
                     <h2 className="text-6xl md:text-8xl font-black leading-none tracking-tighter mt-4">
                         CREANDO <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-lime">
-                        EXPERIENCIAS
+                            EXPERIENCIAS
                         </span>
                         <br />
                         DIGITALES
@@ -28,10 +28,11 @@ export default function Hero() {
                     </p>
 
 
-                    <button className="mt-8 bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2">
+                    <a href="#projects" className="mt-8 inline-flex items-center gap-2 bg-primary text-white rounded-xl font-bold px-6 py-3">
                         Explora mis proyectos
                         <span className="material-symbols-outlined">arrow_forward</span>
-                    </button>
+                    </a>
+
                 </div>
 
                 <div className="col-span-12 lg:col-span-6 relative aspect-square">

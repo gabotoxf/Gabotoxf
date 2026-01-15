@@ -26,7 +26,7 @@ export default function ContactSection() {
 
             <div className="flex flex-wrap justify-center gap-6">
               <a
-                href="mailto:hello@example.com"
+                href="https://wa.link/r1zxye"
                 className="bg-white text-black px-12 py-5 rounded-2xl text-lg font-bold hover:bg-slate-200 transition-all flex items-center gap-2"
               >
                 Iniciar una Conversación
