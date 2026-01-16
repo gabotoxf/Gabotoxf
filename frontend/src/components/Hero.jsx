@@ -14,14 +14,24 @@ export default function Hero() {
                         Desarrollador Full-Stack Junior
                     </span>
 
-                    <h2 className="text-6xl md:text-8xl font-black leading-none tracking-tighter mt-4">
-                        CREANDO <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-lime">
+                    <h2 className="
+  text-4xl
+  sm:text-5xl
+  md:text-6xl
+  lg:text-7xl
+  xl:text-8xl
+  font-black
+  leading-tight
+  tracking-tight
+  mt-4
+">
+                        CREANDO{" "}
+                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-lime">
                             EXPERIENCIAS
                         </span>
-                        <br />
                         DIGITALES
                     </h2>
+
 
                     <p className="max-w-md text-lg text-slate-500 dark:text-slate-400 mt-6">
                         Dedicado a crear aplicaciones Full-Stacks de alto rendimiento y escalables con React, Vue, Node, PHP, Laravel, etc.
