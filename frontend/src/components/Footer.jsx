@@ -39,7 +39,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs font-medium tracking-widest uppercase">
-          <div>© 2026 Gabriel Meza.</div>
+          <div>© 2026 Gabriel Meza - @gabotoxf.</div>
 
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">

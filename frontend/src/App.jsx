@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer"
 
+
 export default function App() {
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
