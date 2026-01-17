@@ -81,7 +81,7 @@ export default function Navbar() {
                 Proyectos
               </a>
               <a
-                href="#contact"
+                href="https://wa.link/r1zxye"
                 onClick={() => setOpen(false)}
                 className="bg-primary text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90"
               >
