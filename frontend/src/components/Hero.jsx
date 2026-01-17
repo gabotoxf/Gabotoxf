@@ -1,3 +1,5 @@
+import cv from "../assets/cv/CV - Gabriel Meza.pdf";
+
 export default function Hero() {
     return (
         <section className="min-h-screen flex items-center px-10 pt-32 lg:pt-20">
@@ -38,10 +40,44 @@ export default function Hero() {
                     </p>
 
 
-                    <a href="#projects" className="mt-8 inline-flex items-center gap-2 bg-primary text-white rounded-xl font-bold px-6 py-3">
-                        Explora mis proyectos
-                        <span className="material-symbols-outlined">arrow_forward</span>
-                    </a>
+                    <div className="mt-10 flex flex-wrap items-center gap-4">
+                        {/* Botón proyectos */}
+                        <a
+                            href="#projects"
+                            className="inline-flex items-center gap-2 bg-primary text-white rounded-xl font-bold px-6 py-3 transition-all hover:scale-105"
+                        >
+                            Explora mis proyectos
+                            <span className="material-symbols-outlined">arrow_forward</span>
+                        </a>
+
+                        {/* Botón descargar CV */}
+                        <a
+                            href={cv}
+                            download
+                            className="
+      inline-flex items-center gap-2
+      rounded-xl font-bold px-6 py-3
+      text-white
+      bg-gradient-to-r from-primary to-accent-lime
+      transition-all
+      hover:scale-105
+      hover:brightness-110
+      shadow-lg shadow-primary/30inline-flex items-center gap-2
+rounded-xl font-bold px-6 py-3
+text-white
+bg-gradient-to-r from-primary/90 to-accent-lime/90
+transition-all duration-300
+hover:scale-105
+hover:brightness-105
+shadow-lg shadow-primary/30
+    "
+                        >
+                            Descargar CV
+                            <span className="material-symbols-outlined">download</span>
+                        </a>
+                    </div>
+
+
 
                 </div>
 

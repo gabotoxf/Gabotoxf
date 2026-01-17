@@ -27,11 +27,6 @@ const skills = [
         label: "Backend",
     },
     {
-        icon: "devicon-express-original",
-        title: "Express.js",
-        label: "Backend",
-    },
-    {
         icon: "devicon-php-plain",
         title: "PHP",
         label: "Backend",
