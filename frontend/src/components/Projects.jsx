@@ -25,19 +25,32 @@ const projectImages = Object.fromEntries(
 ====================================================== */
 const projects = [
   {
+    tag: "Full Stack",
+    title: "System HelpDesk",
+    description: "Aplicación full-stack para la gestión de tickets de soporte técnico con autenticación JWT, dashboard administrativo y API REST.",
+    image: "helpdesk",
+    tech: ["Laravel", "React", "Tailwind CSS", "MySQL", "JWT", "REST API"]
+  },
+  {
+    tag: "Full Stack",
+    title: "Sistema de Diagnóstico Eléctrico",
+    description: "Sistema web para diagnóstico eléctrico que permite analizar datos con IA, generar reportes automáticos en Word y visualizar datos desde una interfaz web.",
+    image: "diagnosticos",
+    tech: ["PHP", "JavaScript", "Python", "PHPWord", "Machine Learning"]
+  },
+  {
+    tag: "Freelance",
+    title: "Ecommerce App",
+    description: "Aplicación web de comercio electrónico con carrito de compras, gestión de productos y sistema de pedidos.",
+    image: "eccomerce",
+    tech: ["PHP", "JavaScript", "MySQL"]
+  },
+  {
     tag: "Freelance",
     title: "Tienda Online",
     description: "Tienda Online, HTML, CSS (Actualmente en proceso).",
     image: "tienda",
     tech: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    tag: "Freelance",
-    title: "Eccomerce App",
-    description:
-      "Ecommerce App con funcionalidades completas de carrito de compras.",
-    image: "eccomerce",
-    tech: ["PHP", "JavaScript", "MySQL"],
   },
   {
     tag: "Freelance",
