@@ -95,10 +95,10 @@ export default function ProjectsSection() {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 6000,
+          //   disableOnInteraction: false,
+          // }}
           breakpoints={{
             1024: {
               slidesPerView: 2,
