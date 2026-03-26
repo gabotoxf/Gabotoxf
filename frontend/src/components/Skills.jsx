@@ -1,15 +1,15 @@
 import "../styles/Tech.css";
 
 const frontendSkills = [
-    { icon: "devicon-javascript-plain", title: "JavaScript", label: "Language" },
-    { icon: "devicon-typescript-plain", title: "TypeScript", label: "Language" },
+    { icon: "devicon-javascript-plain", title: "JavaScript", label: "Lenguaje" },
+    { icon: "devicon-typescript-plain", title: "TypeScript", label: "Lenguaje" },
     { icon: "devicon-react-original", title: "React", label: "Frontend" },
     { icon: "devicon-vuejs-plain", title: "Vue.js", label: "Frontend" },
     { icon: "devicon-nextjs-plain", title: "Next.js", label: "Framework" },
-    { icon: "devicon-tailwindcss-plain", title: "Tailwind CSS", label: "Styling" },
+    { icon: "devicon-tailwindcss-plain", title: "Tailwind CSS", label: "Estilos" },
     { icon: "devicon-html5-plain", title: "HTML5", label: "Frontend" },
     { icon: "devicon-css3-plain", title: "CSS3", label: "Frontend" },
-    { icon: "devicon-vitejs-plain", title: "Vite", label: "Build Tool" },
+    { icon: "devicon-vitejs-plain", title: "Vite", label: "Herramienta" },
 ];
 
 const backendSkills = [
@@ -21,7 +21,7 @@ const backendSkills = [
     { icon: "devicon-mysql-plain", title: "MySQL", label: "Database" },
     { icon: "devicon-prisma-plain", title: "Prisma", label: "ORM" },
     { icon: "devicon-redis-plain", title: "Redis", label: "Cache" },
-    { icon: "devicon-python-plain", title: "Python", label: "Language" },
+    { icon: "devicon-python-plain", title: "Python", label: "Lenguaje" },
     { icon: "devicon-supabase-plain", title: "Supabase", label: "BaaS" },
 ];
 
