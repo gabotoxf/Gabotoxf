@@ -26,6 +26,17 @@ const projectImages = Object.fromEntries(
 ====================================================== */
 const projects = [
   {
+    tag: "FULL STACK",
+    title: "Xinergia",
+    description:
+      "Plataforma con IA para la gestión de diagnósticos eléctricos y generación automática de memorias de cálculo.",
+    image:
+      "xinergia",
+    tech: ["TypeScript", "React", "Vite", "Tailwind CSS", "NestJS", "PostgreSQL", "Python", "Machine Learning",  "Prisma ORM", "JWT", "Swagger"],
+    link: "#",
+    github: "#"
+  },
+  {
     tag: "FRONTEND",
     title: "Brevio AI",
     description:
