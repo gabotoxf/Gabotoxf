@@ -1,95 +1,125 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const LINKS = [
+  { label: "Sobre mí", href: "#about" },
+  { label: "Habilidades", href: "#skills" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Contacto", href: "#contact" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+
+  // Detecta sección activa con IntersectionObserver
+  useEffect(() => {
+    const observers = [];
+    LINKS.forEach(({ href }) => {
+      const el = document.querySelector(href);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActive(href); },
+        { threshold: 0.4 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  // Sombra sutil al hacer scroll
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
-      <div className="glass bg-white/70 dark:bg-glass-bg rounded-full px-6 py-3 flex items-center justify-between relative">
-
+      <div
+        className={`glass dark:bg-glass-bg rounded-full px-6 py-3 flex items-center justify-between relative transition-all duration-300 ${scrolled ? "shadow-lg shadow-black/20" : ""
+          }`}
+      >
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-accent-lime animate-pulse lime-glow" />
-          <span className="text-2xl font-bold uppercase tracking-widest text-accent-lime">
-            Gmeza
-          </span>
+        <a href="#" className="flex items-center group">
+          <span className="text-4xl font-black text-accent-lime font-mono">{"{"}</span>
+          <span className="text-4xl font-black text-white font-mono mx-1 group-hover:opacity-80 transition-opacity">gm</span>
+          <span className="text-4xl font-black text-accent-lime font-mono">{"}"}</span>
+        </a>
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-1">
+          {LINKS.map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              className={`relative px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${active === href
+                ? "text-white bg-white/10"
+                : "text-slate-400 hover:text-white hover:bg-white/5"
+                }`}
+            >
+              {label}
+              {active === href && (
+                <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
+              )}
+            </a>
+          ))}
         </div>
 
+        {/* CTA desktop */}
+        <a
+          href="https://wa.link/r1zxye"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-full text-sm font-bold hover:brightness-110 hover:scale-105 transition-all"
+        >
+          Hablemos
+          <i className="fa-brands fa-whatsapp text-base" />
+        </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-sm font-medium hover:text-primary">
-            Sobre mí
-          </a>
-          <a href="#skills" className="text-sm font-medium hover:text-primary">
-            Habilidades
-          </a>
-          <a href="#projects" className="text-sm font-medium hover:text-primary">
-            Proyectos
-          </a>
-          <a
-            href="https://wa.link/r1zxye"
-            className="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold hover:opacity-90"
-          >
-            Hablemos
-          </a>
-        </div>
-
+        {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden flex flex-col gap-1.5"
-          aria-label="Abrir menú"
+          className="md:hidden flex flex-col gap-1.5 p-1"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
         >
-          <span
-            className={`h-0.5 w-6 bg-current transition-transform ${
-              open ? "rotate-45 translate-y-2" : ""
-            }`}
-          />
-          <span
-            className={`h-0.5 w-6 bg-current transition-opacity ${
-              open ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`h-0.5 w-6 bg-current transition-transform ${
-              open ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          />
+          <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
+          <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
 
-        {open && (
-          <div className="absolute top-full mt-4 left-0 w-full rounded-3xl bg-white/80 dark:bg-glass-bg backdrop-blur-xl shadow-xl md:hidden">
-            <div className="flex flex-col items-center gap-6 py-8">
+        {/* Mobile menu */}
+        <div
+          className={`absolute top-full mt-3 left-0 w-full rounded-3xl dark:bg-glass-bg backdrop-blur-xl border border-white/10 shadow-2xl md:hidden overflow-hidden transition-all duration-300 ${open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+            }`}
+        >
+          <div className="flex flex-col items-center gap-1 py-6 px-4">
+            {LINKS.map(({ label, href }) => (
               <a
-                href="#about"
+                key={href}
+                href={href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium hover:text-primary"
+                className={`w-full text-center px-4 py-3 rounded-2xl text-sm font-medium transition-all ${active === href
+                  ? "bg-white/10 text-white"
+                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  }`}
               >
-                Sobre mí
+                {label}
               </a>
-              <a
-                href="#skills"
-                onClick={() => setOpen(false)}
-                className="text-sm font-medium hover:text-primary"
-              >
-                Habilidades
-              </a>
-              <a
-                href="#projects"
-                onClick={() => setOpen(false)}
-                className="text-sm font-medium hover:text-primary"
-              >
-                Proyectos
-              </a>
-              <a
-                href="https://wa.link/r1zxye"
-                onClick={() => setOpen(false)}
-                className="bg-primary text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90"
-              >
-                Hablemos
-              </a>
-            </div>
+            ))}
+            <a
+              href="https://wa.link/r1zxye"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-2 w-full flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-2xl text-sm font-bold hover:brightness-110 transition-all"
+            >
+              Hablemos
+              <i className="fa-brands fa-whatsapp text-base" />
+            </a>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

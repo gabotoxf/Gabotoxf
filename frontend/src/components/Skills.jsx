@@ -35,10 +35,10 @@ export default function Skills() {
 
             <div className="max-w-7xl mx-auto px-6 mb-16 relative z-10 text-center">
                 <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-6 font-display">
-                    Tecnologías
+                    Mi stack de trabajo
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-center">
-                    Stack tecnológico enfocado en rendimiento, escalabilidad y buenas prácticas.
+                    Las herramientas con las que construyo proyectos reales, día a día.
                 </p>
             </div>
 

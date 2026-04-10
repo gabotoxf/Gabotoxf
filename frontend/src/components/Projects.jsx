@@ -6,9 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-/* ======================================================
-   AUTO-IMPORT DE IMÁGENES (VITE)
-====================================================== */
 const images = import.meta.glob(
   "../assets/img/proyectos/*.{png,jpg,jpeg,webp}",
   { eager: true }
@@ -21,100 +18,122 @@ const projectImages = Object.fromEntries(
   ])
 );
 
-/* ======================================================
-   DATA DE PROYECTOS
-====================================================== */
 const projects = [
   {
-    tag: "FULL STACK",
+    tag: "Full Stack",
     title: "Xinergia",
     description:
-      "Plataforma con IA para la gestión de diagnósticos eléctricos y generación automática de memorias de cálculo.",
-    image:
-      "xinergia",
-    tech: ["TypeScript", "React", "Vite", "Tailwind CSS", "NestJS", "PostgreSQL", "Python", "Machine Learning",  "Prisma ORM", "JWT", "Swagger"],
+      "Elimina horas de trabajo manual en empresas eléctricas — analiza datos con IA y genera reportes técnicos automáticamente en segundos.",
+    image: "xinergia",
+    tech: ["TypeScript", "React", "NestJS", "PostgreSQL", "Python", "Machine Learning", "Prisma ORM"],
     link: "#",
-    github: "#"
-  },
-  {
-    tag: "FRONTEND",
-    title: "Brevio AI",
-    description:
-      "App para obtener resúmenes con IA de documentos PDF, rápida e intuitiva.",
-    image:
-      "brevio",
-    tech: ["TypeScript", "React", "Vite", "Tailwind CSS", "LLaMA 3.1", "Groq Inference API", "PDF.js", "React Router"],
-    link: "https://brevio-self.vercel.app/",
-    github: "#"
+    github: "#",
+    confidential: true,
   },
   {
     tag: "Full Stack",
     title: "Andrix",
-    image:
-      "andrix",
-    description: "Plataforma de streaming full-stack con scraping de fuentes, metadatos de TMDB y recomendaciones por IA.",
-    tech: ["Next.js 14", "NestJS", "PostgreSQL", "Prisma", "Socket.io", "Redis", "Puppeteer", "Playwright", "Supabase", "Vercel"],
+    description:
+      "Plataforma de streaming que resuelve la fragmentación de contenido — agrega fuentes, enriquece con metadatos de TMDB y recomienda contenido con IA.",
+    image: "andrix",
+    tech: ["Next.js 14", "NestJS", "PostgreSQL", "Prisma", "Socket.io", "Redis", "Puppeteer", "Supabase"],
     link: "https://andrix.vercel.app/",
-    github: "#"
+    github: "#",
+    confidential: false,
+  },
+  {
+    tag: "Frontend",
+    title: "Brevio AI",
+    description:
+      "Convierte documentos largos en resúmenes accionables en segundos — para estudiantes y profesionales que no tienen tiempo de leer todo.",
+    image: "brevio",
+    tech: ["TypeScript", "React", "Vite", "Tailwind CSS", "LLaMA 3.1", "Groq API", "PDF.js"],
+    link: "https://brevio-self.vercel.app/",
+    github: "#",
+    confidential: false,
   },
   {
     tag: "Full Stack",
     title: "System HelpDesk",
-    description: "Aplicación full-stack para la gestión de tickets de soporte técnico con autenticación JWT, dashboard administrativo y API REST.",
+    description:
+      "Centraliza la gestión de soporte técnico de una empresa — tickets, roles, dashboard administrativo y API REST lista para escalar.",
     image: "helpdesk",
     tech: ["Laravel", "React", "Tailwind CSS", "MySQL", "JWT", "REST API"],
     link: "#",
-    github: "#"
+    github: "#",
+    confidential: true,
   },
-  {
-    tag: "Full Stack",
-    title: "Sistema de Diagnóstico Eléctrico",
-    description: "Sistema web para diagnóstico eléctrico que permite analizar datos con IA, generar reportes automáticos en Word y visualizar datos desde una interfaz web.",
-    image: "diagnosticos",
-    tech: ["PHP", "JavaScript", "Python", "PHPWord", "Machine Learning"],
-    link: "#",
-    github: "#"
-  },
+  // {
+  //   tag: "Full Stack",
+  //   title: "Sistema de Diagnóstico Eléctrico",
+  //   description:
+  //     "Reemplaza diagnósticos manuales en campo — analiza datos eléctricos con IA y genera reportes Word automáticos listos para entregar al cliente.",
+  //   image: "diagnosticos",
+  //   tech: ["PHP", "JavaScript", "Python", "PHPWord", "Machine Learning"],
+  //   link: "#",
+  //   github: "#",
+  //   confidential: true,
+  // },
   {
     tag: "Freelance",
     title: "Ecommerce App",
-    description: "Aplicación web de comercio electrónico con carrito de compras, gestión de productos y sistema de pedidos.",
+    description:
+      "Tienda online completa para negocio local — carrito de compras, gestión de productos y sistema de pedidos desde el primer día.",
     image: "eccomerce",
     tech: ["PHP", "JavaScript", "MySQL"],
     link: "#",
-    github: "#"
-  },
-  {
-    tag: "Freelance",
-    title: "Tienda Online",
-    description: "Tienda Online, HTML, CSS (Actualmente en proceso).",
-    image: "tienda",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://gabotoxf.github.io/Tienda/",
-    github: "#"
+    github: "#",
+    confidential: false,
   },
   {
     tag: "Freelance",
     title: "Tub Exports",
     description:
-      "Sitio web para empresa exportadora.",
-    image:
-      "tub",
+      "Presencia digital para empresa exportadora — catálogo de productos, sección de contacto y diseño orientado a captar clientes internacionales.",
+    image: "tub",
     tech: ["JavaScript", "HTML", "CSS"],
     link: "https://tub-exports.com/",
-    github: "#"
-  }
+    github: "#",
+    confidential: false,
+  },
+  {
+    tag: "Freelance",
+    title: "Tienda Online",
+    description:
+      "Tienda de moda online con catálogo de productos, filtros por categoría y diseño responsive. En desarrollo activo.",
+    image: "tienda",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://gabotoxf.github.io/Tienda/",
+    github: "#",
+    confidential: false,
+  },
 ];
 
-/* ======================================================
-   COMPONENTE
-====================================================== */
-export default function ProjectsSection() {
-  const [showToast, setShowToast] = useState(false);
+// ── Tipos de toast ──────────────────────────────────────
+const TOASTS = {
+  code: {
+    icon: "info",
+    title: "Código no disponible",
+    message: "Aún no está disponible públicamente.",
+  },
+  unpublished: {
+    icon: "schedule",
+    title: "Aún no publicado",
+    message: "Este proyecto todavía no está publicado.",
+  },
+  confidential: {
+    icon: "lock",
+    title: "Proyecto confidencial",
+    message: "Este proyecto pertenece a un cliente y no puede mostrarse.",
+  },
+};
 
-  const triggerToast = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
+export default function ProjectsSection() {
+  const [toast, setToast] = useState(null); // null | "code" | "unpublished" | "confidential"
+
+  const showToast = (type) => {
+    setToast(type);
+    setTimeout(() => setToast(null), 3500);
   };
 
   return (
@@ -124,8 +143,8 @@ export default function ProjectsSection() {
           Proyectos
         </h2>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-          Proyectos destacados que demuestran mi experiencia en desarrollo web y
-          soluciones innovadoras.
+          Una selección de lo que he construido — desde ideas propias hasta
+          soluciones reales para clientes y empresas.
         </p>
       </div>
 
@@ -136,63 +155,69 @@ export default function ProjectsSection() {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          // autoplay={{
-          //   delay: 6000,
-          //   disableOnInteraction: false,
-          // }}
-          breakpoints={{
-            1024: {
-              slidesPerView: 2,
-            },
-          }}
+          breakpoints={{ 1024: { slidesPerView: 2 } }}
           className="projects-slider"
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
               <ProjectCard
                 {...project}
-                onCodeClick={triggerToast}
                 image={
                   project.image.startsWith("http")
                     ? project.image
                     : projectImages[project.image]
                 }
+                onCodeClick={() => showToast("code")}
+                onUnpublishedClick={() => showToast("unpublished")}
+                onConfidentialClick={() => showToast("confidential")}
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* Toast Notification */}
+      {/* Toast */}
       <div
-        className={`fixed bottom-8 right-8 z-50 transition-all duration-500 transform ${
-          showToast ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-        }`}
+        className={`fixed bottom-8 right-8 z-50 transition-all duration-500 transform ${toast ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
+          }`}
       >
-        <div className="bg-slate-900/90 backdrop-blur-xl border border-white/10 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4">
-          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-            <span className="material-symbols-outlined">info</span>
+        {toast && (
+          <div className="bg-slate-900/90 backdrop-blur-xl border border-white/10 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4">
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${toast === "confidential"
+                ? "bg-amber-500/20 text-amber-400"
+                : "bg-primary/20 text-primary"
+              }`}>
+              <span className="material-symbols-outlined">{TOASTS[toast].icon}</span>
+            </div>
+            <div>
+              <p className="text-white font-bold text-sm">{TOASTS[toast].title}</p>
+              <p className="text-slate-400 text-xs">{TOASTS[toast].message}</p>
+            </div>
+            <button
+              onClick={() => setToast(null)}
+              className="ml-4 text-slate-500 hover:text-white transition-colors"
+            >
+              <span className="material-symbols-outlined text-sm">close</span>
+            </button>
           </div>
-          <div>
-            <p className="text-white font-bold text-sm">Código no disponible</p>
-            <p className="text-slate-400 text-xs">Aún no está disponible públicamente.</p>
-          </div>
-          <button 
-            onClick={() => setShowToast(false)}
-            className="ml-4 text-slate-500 hover:text-white transition-colors"
-          >
-            <span className="material-symbols-outlined text-sm">close</span>
-          </button>
-        </div>
+        )}
       </div>
     </section>
   );
 }
 
-/* ======================================================
-   PROJECT CARD
-====================================================== */
-function ProjectCard({ tag, title, description, image, tech, link, onCodeClick }) {
+function ProjectCard({
+  tag,
+  title,
+  description,
+  image,
+  tech,
+  link,
+  confidential,
+  onCodeClick,
+  onUnpublishedClick,
+  onConfidentialClick,
+}) {
   return (
     <div className="group relative h-full">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-[32px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -201,49 +226,59 @@ function ProjectCard({ tag, title, description, image, tech, link, onCodeClick }
         {/* Image */}
         <div className="aspect-[16/10] rounded-[24px] overflow-hidden relative">
           <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10" />
-
           <div
             className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
             style={{ backgroundImage: `url(${image})` }}
           />
-
           <div className="absolute top-6 left-6 z-20">
             <span className="px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest border border-white/10">
               {tag}
             </span>
           </div>
+          {/* Badge confidencial sobre la imagen */}
+          {confidential && (
+            <div className="absolute top-6 right-6 z-20">
+              <span className="px-3 py-1.5 rounded-full bg-amber-500/20 backdrop-blur-md text-amber-400 text-[10px] font-black uppercase tracking-widest border border-amber-500/30 flex items-center gap-1">
+                <span className="material-symbols-outlined text-[12px]">lock</span>
+                Confidencial
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="p-8 flex-grow flex flex-col">
           <div className="flex justify-between items-start mb-4">
-            <h3 className="text-3xl font-black text-white font-display">
-              {title}
-            </h3>
+            <h3 className="text-3xl font-black text-white font-display">{title}</h3>
             <div className="flex gap-4">
-              <button 
+              {/* Botón código */}
+              <button
                 onClick={onCodeClick}
                 className="material-symbols-outlined text-slate-400 hover:text-white cursor-pointer transition-colors"
-                title="Ver Código"
+                title="Ver código"
               >
                 code
               </button>
+
+              {/* Botón link — siempre visible, comportamiento según tipo */}
               {link && link !== "#" ? (
-                <a 
-                  href={link} 
-                  target="_blank" 
+                <a
+                  href={link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="material-symbols-outlined text-slate-400 hover:text-white cursor-pointer transition-colors"
-                  title="Ver Sitio Web"
+                  title="Ver sitio"
                 >
                   open_in_new
                 </a>
               ) : (
-                <span 
-                  className="material-symbols-outlined text-slate-600 cursor-not-allowed"
-                  title="Sitio no disponible"
+                <button
+                  onClick={confidential ? onConfidentialClick : onUnpublishedClick}
+                  className={`material-symbols-outlined text-slate-400 cursor-pointer transition-colors ${confidential ? "hover:text-amber-400" : "hover:text-white"
+                    }`}
+                  title="Ver sitio"
                 >
-                  link_off
-                </span>
+                  open_in_new
+                </button>
               )}
             </div>
           </div>
@@ -254,10 +289,7 @@ function ProjectCard({ tag, title, description, image, tech, link, onCodeClick }
 
           <div className="flex flex-wrap gap-3 mt-auto">
             {tech.map((t) => (
-              <span
-                key={t}
-                className="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs font-semibold"
-              >
+              <span key={t} className="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs font-semibold">
                 {t}
               </span>
             ))}

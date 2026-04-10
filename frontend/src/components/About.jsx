@@ -63,11 +63,14 @@ export default function About() {
                 <span className="text-transparent mx-1 bg-clip-text bg-gradient-to-r from-primary to-accent-lime">
                   INGENIERO DE SISTEMAS,
                 </span>
-                apasionado por la programación y el diseño web, con experiencia en proyectos que van desde sitios corporativos hasta aplicaciones web interactivas.
+                  me gusta construir cosas en la web y convertir ideas en interfaces funcionales.
+  He trabajado en proyectos como sitios corporativos y aplicaciones web interactivas.
               </p>
 
               <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                Actualmente trabajo a medio tiempo en la automatización de procesos internos de una empresa, desarrollando soluciones digitales que optimizan flujos de trabajo y mejoran la eficiencia operativa.
+                Hoy optimizo flujos operativos para una empresa, y tengo
+                disponibilidad para proyectos freelance donde pueda
+                construir algo que importe.
               </p>
             </div>
 
@@ -87,7 +90,7 @@ export default function About() {
               </div>
 
               <div>
-                <span className="block text-2xl font-bold text-accent-lime">70%</span>
+                <span className="block text-2xl font-bold text-accent-lime">100%</span>
                 <span className="text-xs uppercase tracking-widest opacity-60">
                   Disponibilidad
                 </span>
