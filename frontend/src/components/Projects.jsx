@@ -184,8 +184,8 @@ export default function ProjectsSection() {
         {toast && (
           <div className="bg-slate-900/90 backdrop-blur-xl border border-white/10 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center ${toast === "confidential"
-                ? "bg-amber-500/20 text-amber-400"
-                : "bg-primary/20 text-primary"
+              ? "bg-accent-lime/20 text-accent-lime"
+              : "bg-primary/20 text-primary"
               }`}>
               <span className="material-symbols-outlined">{TOASTS[toast].icon}</span>
             </div>
@@ -238,7 +238,7 @@ function ProjectCard({
           {/* Badge confidencial sobre la imagen */}
           {confidential && (
             <div className="absolute top-6 right-6 z-20">
-              <span className="px-3 py-1.5 rounded-full bg-amber-500/20 backdrop-blur-md text-amber-400 text-[10px] font-black uppercase tracking-widest border border-amber-500/30 flex items-center gap-1">
+              <span className="px-3 py-1.5 rounded-full bg-accent-lime/20 backdrop-blur-md text-accent-lime text-[10px] font-black uppercase tracking-widest border border-accent-lime/30 flex items-center gap-1">
                 <span className="material-symbols-outlined text-[12px]">lock</span>
                 Confidencial
               </span>
@@ -273,7 +273,7 @@ function ProjectCard({
               ) : (
                 <button
                   onClick={confidential ? onConfidentialClick : onUnpublishedClick}
-                  className={`material-symbols-outlined text-slate-400 cursor-pointer transition-colors ${confidential ? "hover:text-amber-400" : "hover:text-white"
+                  className={`material-symbols-outlined text-slate-400 cursor-pointer transition-colors ${confidential ? "hover:text-accent-lime" : "hover:text-white"
                     }`}
                   title="Ver sitio"
                 >
